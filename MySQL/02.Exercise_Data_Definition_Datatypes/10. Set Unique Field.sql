@@ -1,0 +1,6 @@
+USE `people`;
+
+ALTER TABLE `users`
+DROP PRIMARY KEY,
+ADD CONSTRAINT `pk_id` PRIMARY KEY `users`(`id`),
+MODIFY `username` VARCHAR(30) UNIQUE;

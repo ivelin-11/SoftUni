@@ -1,0 +1,20 @@
+FileInputStream
+FileOutputStream
+Scanner(stream)
+BufferedWritter
+BufferedReader
+
+For below ones we need file(output/input) stream and
+output/input(reader/writer) stream
+{
+FileReader
+FileWritter
+}
+
+
+FileClasses and PathClass
+//Files class have many functions
+PrintStream,PrintWritter(the second directly prints char not the int value)
+
+For more info:
+https://www.baeldung.com/java-write-to-file
