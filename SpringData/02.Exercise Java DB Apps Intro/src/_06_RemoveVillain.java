@@ -6,7 +6,7 @@ public class _06_RemoveVillain {
     public static void main(String[] args) throws SQLException {
         Properties properties = new Properties();
         properties.setProperty("user", "root");
-        properties.setProperty("password", "123456");
+        properties.setProperty("password", "");
 
         Connection connection =
                 DriverManager.getConnection("jdbc:mysql://localhost:3306/minions_db", properties);
@@ -60,5 +60,7 @@ public class _06_RemoveVillain {
         } catch (SQLException e) {
             connection.rollback();
         }
+
+        connection.close();
     }
 }

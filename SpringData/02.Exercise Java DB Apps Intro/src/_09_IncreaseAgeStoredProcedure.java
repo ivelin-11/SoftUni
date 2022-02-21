@@ -7,7 +7,7 @@ public class _09_IncreaseAgeStoredProcedure {
 
         Properties properties = new Properties();
         properties.setProperty("user", "root");
-        properties.setProperty("password", "123456");
+        properties.setProperty("password", "");
 
         Scanner scanner = new Scanner(System.in);
 
@@ -35,5 +35,7 @@ public class _09_IncreaseAgeStoredProcedure {
         int age = minionSet.getInt("age");
 
         System.out.println(name + " " + age);
+
+        connection.close();
     }
 }

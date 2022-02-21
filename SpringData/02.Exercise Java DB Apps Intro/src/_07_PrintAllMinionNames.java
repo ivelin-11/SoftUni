@@ -7,7 +7,7 @@ public class _07_PrintAllMinionNames {
 
         Properties properties = new Properties();
         properties.setProperty("user", "root");
-        properties.setProperty("password", "123456");
+        properties.setProperty("password", "");
 
         Connection connection =
                 DriverManager.getConnection("jdbc:mysql://localhost:3306/minions_db", properties);
@@ -29,5 +29,7 @@ public class _07_PrintAllMinionNames {
             System.out.println(minionsNames.pollFirst());
             System.out.println(minionsNames.pollLast());
         }
+
+        connection.close();
     }
 }

@@ -8,7 +8,7 @@ public class _08_IncreaseMinionsAge {
 
         Properties properties = new Properties();
         properties.setProperty("user", "root");
-        properties.setProperty("password", "123456");
+        properties.setProperty("password", "");
 
         Scanner scanner = new Scanner(System.in);
         String[] minionsIDs = (scanner.nextLine().split("\\s+"));
