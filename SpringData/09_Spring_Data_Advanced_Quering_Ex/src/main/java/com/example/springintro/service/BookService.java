@@ -1,6 +1,5 @@
 package com.example.springintro.service;
 
-import com.example.springintro.model.entity.AgeRestriction;
 import com.example.springintro.model.entity.Book;
 import com.example.springintro.model.entity.BookSummary;
 
@@ -34,4 +33,10 @@ public interface BookService {
     int countBooksWithTitleLongerThan(int titleMinimumLength);
 
     BookSummary getBookSummaryByTitle(String title);
+
+    int updateNumberBooksAfterDate(String date, int number);
+
+    int deleteByCopiesLessThan(int amount);
+
+
 }

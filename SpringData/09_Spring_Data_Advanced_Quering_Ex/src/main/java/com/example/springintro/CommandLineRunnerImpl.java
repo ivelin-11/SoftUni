@@ -32,11 +32,31 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
         Scanner scanner = new Scanner(System.in);
 //        seedData();
 
+        //14
+//        String[] names=scanner.nextLine().split("\\s+");
+////      this.authorService.createProcedureForGettingWrittenBooksCount();
+//      System.out.printf("%s %s has written %d books%n",
+//              names[0],names[1],
+//              this.authorService.callProcedureGET_AUTHOR_WRITTEN_BOOKS_COUNT(names[0],names[1]));
+
+        //13
+        /*value of amount is hardcoded, if you want you can change it*/
+//        int amount=1000;
+//        System.out.println(this.bookService.deleteByCopiesLessThan(amount)+ " books were deleted");
+
+
+        //12
+//        String date = scanner.nextLine();
+//        int number = Integer.parseInt(scanner.nextLine());
+//        int updatedCount = this.bookService.updateNumberBooksAfterDate(date,number);
+//        System.out.printf("%s books are released after %s, so total of %d book copies were added%n",
+//                updatedCount,date,updatedCount*number);
+
         //11
-        String title= scanner.nextLine();
-        BookSummary bookSummaryByTitle = this.bookService.getBookSummaryByTitle(title);
-        System.out.printf("%s %s %s %.2f%n",
-                bookSummaryByTitle.getTitle(),bookSummaryByTitle.getEditionType(), bookSummaryByTitle.getAgeRestriction(),bookSummaryByTitle.getPrice());
+//        String title= scanner.nextLine();
+//        BookSummary bookSummaryByTitle = this.bookService.getBookSummaryByTitle(title);
+//        System.out.printf("%s %s %s %.2f%n",
+//                bookSummaryByTitle.getTitle(),bookSummaryByTitle.getEditionType(), bookSummaryByTitle.getAgeRestriction(),bookSummaryByTitle.getPrice());
 
         //10
 //this.authorService.getAuthorsWithBooksCountSaledCopies().

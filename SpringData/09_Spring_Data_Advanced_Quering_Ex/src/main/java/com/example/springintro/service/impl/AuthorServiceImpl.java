@@ -75,5 +75,14 @@ public class AuthorServiceImpl implements AuthorService {
         return this.authorRepository.findAllAuthorsWithCountSaledCopies();
     }
 
+    @Override
+    public void createProcedureForGettingWrittenBooksCount() {
+        this.authorRepository.createStoredProcedureGetWrittenBooksCount();
+    }
+
+    @Override
+    public long callProcedureGET_AUTHOR_WRITTEN_BOOKS_COUNT(String firstName,String lastName) {
+        return this.authorRepository.callGetWrittenBooksCount(firstName,lastName);
+    }
 
 }

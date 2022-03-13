@@ -5,10 +5,13 @@ import com.example.springintro.model.entity.Book;
 import com.example.springintro.model.entity.BookSummary;
 import com.example.springintro.model.entity.EditionType;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.NamedNativeQuery;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
@@ -41,8 +44,18 @@ public interface BookRepository extends JpaRepository<Book, Long> {
     int countBooksWithTitleLongerThan(@Param("length") int titleMinimumLength);
 
     @Query("SELECT b.title as title, b.editionType as editionType, b.ageRestriction as ageRestriction, " +
-            "b.price as price "+
+            "b.price as price " +
             "FROM Book b " +
             "WHERE b.title = :title")
     BookSummary findBookSummaryByName(String title);
+
+    @Modifying
+    @Transactional
+    @Query("UPDATE Book b SET b.copies=b.copies+ :amount WHERE b.releaseDate > :date")
+    int updateNumberBooksAfterDate(@Param("date") LocalDate afterDate, @Param("amount") int number);
+
+    @Transactional
+    int deleteByCopiesLessThan(int amount);
+
+
 }
