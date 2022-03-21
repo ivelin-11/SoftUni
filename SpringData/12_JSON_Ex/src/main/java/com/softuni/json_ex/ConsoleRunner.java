@@ -3,7 +3,7 @@ package com.softuni.json_ex;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.softuni.json_ex.car_dealer.services.Seeder;
+import com.softuni.json_ex.car_dealer.services.*;
 import com.softuni.json_ex.productshop.entities.categories.CategoryStatsDTO;
 import com.softuni.json_ex.productshop.entities.products.ProductNoBuyerDTO;
 import com.softuni.json_ex.productshop.entities.users.UserWithSoldProductsDTO;
@@ -29,24 +29,39 @@ public class ConsoleRunner implements CommandLineRunner {
 
     //carDealer
     private Seeder seeder;
-
+    private final CarService carService;
+    private final CustomerService customerService;
+    private final SupplierService supplierService;
+    private final SaleService saleService;
 
     private final Gson gson;
 
     @Autowired
-    public ConsoleRunner(SeedService seedService, ProductService productService, UserRepository userRepository, ProductRepository productRepository, UserService userService, Seeder seeder) {
+    public ConsoleRunner(SeedService seedService, ProductService productService, UserRepository userRepository, ProductRepository productRepository, UserService userService, Seeder seeder, CarService carService, CustomerService customerService, SupplierService supplierService, SaleService saleService) {
         this.seedService = seedService;
         this.productService = productService;
         this.userService = userService;
         this.seeder = seeder;
+        this.carService = carService;
+        this.customerService = customerService;
+        this.supplierService = supplierService;
+        this.saleService = saleService;
         this.gson = new GsonBuilder().setPrettyPrinting().create();
     }
 
     @Override
     public void run(String... args) throws Exception {
 
-            // CarDealerTasks
+        // CarDealerTasks
 //        this.seeder.seedAll();
+//        getCustomerInfo();
+//        getCarsMakeToyota();
+//        getLocalSuppliers();
+        // getCarsAndTheirParts();
+//        getTotalSalesByCustomer();
+//        getSalesWithAppliedDiscounts();
+
+
 
         //ProductShop Tasks
 //    this.seedService.seedAll();
@@ -54,6 +69,31 @@ public class ConsoleRunner implements CommandLineRunner {
 //        getUserWithSoldProductsAndBuyerNames();
 //        getCategoriesStats();
 //        findUsersAndSoldProducts();
+
+    }
+
+    private void getSalesWithAppliedDiscounts() {
+        System.out.println(this.gson.toJson(this.saleService.getSalesWithAppliedDiscount()));
+    }
+
+    private void getTotalSalesByCustomer() {
+        System.out.println(this.gson.toJson(this.customerService.getSalesByCustomer()));
+    }
+
+    private void getCarsAndTheirParts() {
+        System.out.println(this.gson.toJson(this.carService.getCarsWithTheirParts()));
+    }
+
+    private void getLocalSuppliers() {
+        System.out.println(this.gson.toJson(this.supplierService.getLocalSuppliersSoldPartsCount()));
+    }
+
+    private void getCarsMakeToyota() {
+        System.out.println(this.gson.toJson(this.carService.getCarsByBrandToyota()));
+    }
+
+    private void getCustomerInfo() {
+        System.out.println(this.gson.toJson(this.customerService.getOrderedCustomers()));
     }
 
     private void findUsersAndSoldProducts() {

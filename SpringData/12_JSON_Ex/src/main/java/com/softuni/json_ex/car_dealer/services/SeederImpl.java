@@ -2,7 +2,7 @@ package com.softuni.json_ex.car_dealer.services;
 
 
 import com.google.gson.*;
-import com.softuni.json_ex.car_dealer.entities.Sale;
+import com.softuni.json_ex.car_dealer.entities.sales.Sale;
 import com.softuni.json_ex.car_dealer.entities.cars.Car;
 import com.softuni.json_ex.car_dealer.entities.cars.CarImportDTO;
 import com.softuni.json_ex.car_dealer.entities.customers.Customer;
@@ -193,7 +193,7 @@ public class SeederImpl implements Seeder {
             int discount = new Random().nextInt(discounts.size());
 
             Sale sale = new Sale();
-            sale.setDiscount(discount);
+            sale.setDiscount(discounts.get(discount));
             sale.setCar(car.get());
             sale.setCustomer(customer.get());
 

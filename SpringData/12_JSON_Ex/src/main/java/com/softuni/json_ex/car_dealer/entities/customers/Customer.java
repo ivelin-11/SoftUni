@@ -1,13 +1,12 @@
 package com.softuni.json_ex.car_dealer.entities.customers;
 
 
-import com.softuni.json_ex.car_dealer.entities.Sale;
+import com.softuni.json_ex.car_dealer.entities.sales.Sale;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
 
 @Entity
