@@ -36,18 +36,24 @@ public class ConsoleRunner implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
+        
+//Product shop xml tasks
+//        productsInRange();
+//        successfullySoldProducts();
+//        cateoriesByProductsCount();
+//        getUsersAndSoldProducts();
 
 
-        ExportUserSummary exportUserSummary= this.userService.getUsersAndSoldProducts();
+    }
+
+    private void getUsersAndSoldProducts() throws JAXBException {
+        ExportUserSummary exportUserSummary = this.userService.getUsersAndSoldProducts();
         JAXBContext context = JAXBContext.newInstance(ExportUserSummary.class);
 
         Marshaller marshaller = context.createMarshaller();
-        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,true);
+        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
-        marshaller.marshal(exportUserSummary,System.out);
-//        cateoriesByProductsCount();
-//        successfullySoldProducts();
-//        productsInRange();
+        marshaller.marshal(exportUserSummary, System.out);
     }
 
     private void cateoriesByProductsCount() throws JAXBException {
@@ -55,9 +61,9 @@ public class ConsoleRunner implements CommandLineRunner {
         JAXBContext context = JAXBContext.newInstance(ExportCategoryInfo.class);
 
         Marshaller marshaller = context.createMarshaller();
-        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,true);
+        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
-        marshaller.marshal(categoryInfo,System.out);
+        marshaller.marshal(categoryInfo, System.out);
     }
 
     private void successfullySoldProducts() throws JAXBException {
