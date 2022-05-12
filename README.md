@@ -1,5 +1,5 @@
 # SoftUni
-This repository holds my tasks from lectures and homeworks assignment in Software University
+This repository holds my tasks from lectures and homework assignment in Software University
 <a href="https://softuni.bg/trainings/courses" rel="Courses"> ![SoftUni logo][logo] </a>
 
 [logo]: http://innovationstarterbox.bg/wp-content/uploads/2016/05/Softuni_logo_trasparent.png "Logo Title Text 2"
