@@ -1,16 +1,28 @@
 package com.softuni.mobilele.model.dto;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
 public class UserRegisterDTO {
 
+	@NotEmpty
+	@Email
 	private String email;
 
+	@NotEmpty
+	@Size(min = 2, max = 20)
 	private String firstName;
 
+	@NotEmpty
+	@Size(min = 2, max = 20)
 	private String lastName;
 
+	@NotEmpty
+	@Size(min = 5)
 	private String password;
 
-	private String confirmPassoword;
+	private String confirmPassword;
 
 	public String getEmail() {
 		return email;
@@ -48,12 +60,12 @@ public class UserRegisterDTO {
 		this.password = password;
 	}
 
-	public String getConfirmPassoword() {
-		return confirmPassoword;
+	public String getConfirmPassword() {
+		return confirmPassword;
 	}
 
-	public void setConfirmPassoword(String confirmPassoword) {
-		this.confirmPassoword = confirmPassoword;
+	public void setConfirmPassword(String confirmPassword) {
+		this.confirmPassword = confirmPassword;
 	}
 
 }
